@@ -171,6 +171,12 @@
     height: 100%;
     object-fit: cover;
 }
+.hero-slider .slide::before{
+    content:"";
+    position: absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
 
 .hero-slider .hero-content {
     position: absolute;
