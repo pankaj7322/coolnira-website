@@ -401,7 +401,7 @@ html{
 /* ================= COUNTING SECTION ================= */
 
 #delivery{
-    scroll-margin-top: 150px;
+    scroll-margin-top: 100px;
 }
 .counting {
     display: grid;
@@ -940,10 +940,8 @@ html{
 
     .nav-links.active {
         display: flex;
+        background-color:rgb(19, 19, 99);
     }
-}
-
-
     .nav-links {
         display: none;
         position: absolute;
