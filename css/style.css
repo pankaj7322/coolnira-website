@@ -432,6 +432,58 @@
     color: #12cffe;
 }
 
+/* ------------------------ section severces -----------------*/
+.services-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.subtitle {
+    color: #1aa3ff;
+    font-weight: 600;
+}
+.services-heading h2 {
+    font-size: 42px;
+    color: #002f6c;
+}
+.wave {
+    width: 90px;
+    height: 6px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg,#1aa3ff,#005cff);
+    border-radius: 20px;
+}
+
+.slider-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.services-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 1s linear;
+    will-change: transform;
+}
+
+
+.service-card {
+    min-width: 350px;
+    background: #fff;
+    border-radius: 16px;
+    text-align: center;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+.service-card img{
+    width:100%;
+    height: 150px;
+}
 
 /* ---------------- RESPONSIVE ---------------- */
 
