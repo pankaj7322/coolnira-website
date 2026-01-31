@@ -436,6 +436,7 @@
 .services-heading {
     text-align: center;
     margin-bottom: 40px;
+    margin-top:20px;
 }
 .subtitle {
     color: #1aa3ff;
@@ -476,9 +477,10 @@
     background: #fff;
     border-radius: 16px;
     text-align: center;
+    padding-left:15px;
     height: 250px;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    box-shadow: 0 12px 10px rgba(0,0,0,.08);
 }
 .service-card img{
     width:100%;
