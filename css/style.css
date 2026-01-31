@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 /* ---------------- COMMON ---------------- */
 
 .container {
@@ -294,7 +296,9 @@
     line-height: 1.7;
 }
 /* ================= ABOUT SECTION   ================= */
-
+#about{
+    scroll-margin-top:50px;
+}
 .about {
     padding: 60px 5%;
     background: #e7e5e5;
@@ -372,6 +376,9 @@
 }
 /* ================= COUNTING SECTION ================= */
 
+#delivery{
+    scroll-margin-top: 150px;
+}
 .counting {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -433,6 +440,9 @@
 }
 
 /* ------------------------ section severces -----------------*/
+#service{
+    scroll-margin-top:110px ;
+}
 .services-heading {
     text-align: center;
     margin-bottom: 40px;

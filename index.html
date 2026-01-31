@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>AquaDrop Style Header</title>
+    <title>Coolnira - Pure Water Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="images/water-bottle.ico">
@@ -43,7 +43,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png">
                 <div>
                     <h1>Coolnira</h1>
-                    <small>Water Delivery Company</small>
+                    <small>Pure Water Solution</small>
                 </div>
             </div>
 
@@ -57,10 +57,10 @@
                     <a href="#">Home</a>
                     <a href="#about">About</a>
                     <a href="#delivery">Delivery</a>
-                    <a href="#">Service</a>
+                    <a href="#service">Service</a>
                     <a href="#products">Products</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Address</a>
+                    <a href="#contact">Contact us</a>
+                    <a href="#address">Address</a>
                 </div>
             </nav>
 
@@ -73,9 +73,9 @@
         <div class="slide active">
             <img src="images/slide1.jpg" alt="Slide 1">
             <div class="hero-content">
-                <span>💧 WELCOME TO AQUADROP 💧</span>
+                <span>💧 WELCOME TO Coolnira 💧</span>
                 <h1>Stay Hydrated, Stay Healthy</h1>
-                <a href="#" class="hero-btn">Our Products</a>
+                <a href="#products" class="hero-btn">Our Products</a>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
             <div class="hero-content">
                 <span>Fresh & Pure Water</span>
                 <h1>Delivered To Your Doorstep</h1>
-                <a href="#" class="hero-btn">Order Now</a>
+                <a href="#address" class="hero-btn">Order Now</a>
             </div>
         </div>
 
@@ -164,7 +164,7 @@
                 </div>
 
                 <h2>Better Water, Better Life, Delivered</h2>
-                <img src="{% static 'images/line.png' %}" alt="">
+                <img src="images/line.png" alt="">
             </div>
 
             <p class="about-text">
@@ -205,7 +205,7 @@
                 </div>
             </div>
 
-            <a href="/Contact-us" class="btn">Contact Us</a>
+            <a href="#contact" class="btn">Contact Us</a>
 
         </div>
     </section>
@@ -277,7 +277,7 @@
     </section>
 
     <!-- -------------------Service Section ---------------- -->
-    <section class="services-section">
+    <section class="services-section" id="service">
 
         <div class="services-heading">
             <span class="subtitle">💧 What We Offer 💧</span>
@@ -367,7 +367,7 @@
     </section>
 
     <!-- PRODUCTS SECTION -->
-    <section class="products-section">
+    <section class="products-section" id="products">
 
         <div class="products-heading">
             <span class="subtitle">💧 Featured Products 💧</span>
@@ -483,7 +483,7 @@
             <div class="wave"></div>
         </div>
 
-        <div class="contact-container">
+        <div class="contact-container" >
 
             <form id="contactForm" class="contact-form">
 
@@ -525,8 +525,8 @@
             <button id="closePopup">Okay</button>
         </div>
     </div>
-    <!-- FOOTER -->
-    <footer class="site-footer">
+    <!-- -----------------FOOTER -------------->
+    <footer class="site-footer" id="address">
 
         <div class="footer-container">
 

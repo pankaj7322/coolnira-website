@@ -35,6 +35,15 @@ const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 })
+
+// close menu when clicking any link
+document.querySelectorAll("#nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+
+});
 // ************************* For second slider
 document.addEventListener("DOMContentLoaded", () => {
 
