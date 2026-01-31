@@ -80,9 +80,61 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(slide, 2800);
 
 });
+// *********************** Inquiry form
 
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("closePopup");
 
+form.addEventListener("submit", async (e) => {
 
+    e.preventDefault();
+
+    const data = Object.fromEntries(
+        new FormData(form).entries()
+    );
+
+    try {
+        const res = await fetch(
+            "https://script.google.com/macros/s/AKfycbzgY-hzAZQW4WBpzs94bMYJL_Erwckhz6HEkbDUTc0IoHd_mQZ-zHP4H5B5CiWUZCBS/exec",
+            {
+                method: "POST",
+                body: JSON.stringify(data)
+            }
+        );
+
+        const result = await res.json();
+
+        if (result.status === "success") {
+            popup.classList.add("active");
+            form.reset();
+        }
+
+    } catch (err) {
+        alert("Submission failed. Try again.");
+    }
+
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+    const backBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            backBtn.classList.add("show");
+        } else {
+            backBtn.classList.remove("show");
+        }
+    });
+
+    backBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+});
 
 
 
