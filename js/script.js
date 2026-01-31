@@ -29,12 +29,21 @@ setInterval(() => {
 
 
 // script for hamburger
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-})
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+});
+
+// close menu after clicking link
+document.querySelectorAll("#nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+    });
+});
 
 // close menu when clicking any link
 document.querySelectorAll("#nav-links a").forEach(link => {
