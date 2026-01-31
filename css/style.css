@@ -171,11 +171,12 @@
     height: 100%;
     object-fit: cover;
 }
-.hero-slider .slide::before{
-    content:"";
+
+.hero-slider .slide::before {
+    content: "";
     position: absolute;
-    inset:0;
-    background:rgba(0,0,0,0.45);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-slider .hero-content {
@@ -226,6 +227,212 @@
     right: 20px;
 }
 
+/* ================= FEATURES SECTION ================= */
+
+.features {
+    background: #f6f8fb;
+    padding: 60px 0;
+}
+
+.box-container {
+    width: 90%;
+    margin: auto;
+}
+
+.feature-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Feature Card */
+.box {
+    background: #ffffff;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #002c8f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Circle */
+.box .icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    background: #002c8f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon SVG */
+.box .icon svg {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* Title */
+.box h3 {
+    font-size: 22px;
+    color: #002c8f;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Text */
+.box p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+/* ================= ABOUT SECTION   ================= */
+
+.about {
+    padding: 60px 5%;
+    background: #e7e5e5;
+}
+.about .content{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.heading .sub{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1ea7fd;
+    font-size:20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.heading .sub svg{
+    width:30px;
+    height:30px;
+}
+.heading h2 {
+    font-size: 36px;
+    color: #002c8f;
+    margin-bottom: 10px;
+}
+
+.heading img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 26px;
+    color: #555;
+    margin-bottom: 30px;
+}
+.about-points {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.point {
+    display: flex;
+    gap: 15px;
+}
+.point .icon1 {
+    font-size: 30px;
+    color: #1ea7fd;
+}
+
+.point h5 {
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    color: #002c8f;
+}
+
+.point p {
+    font-size: 14px;
+    color: #555;
+    line-height: 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: #1ea7fd;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+/* ================= COUNTING SECTION ================= */
+
+.counting {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 30px 5%;
+    background: #1354ed;;
+}
+
+.cbox {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cbox:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.cbox .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ICON */
+
+.cbox .icon1 {
+    width: 60px;
+    height: 60px;
+    background: #e9f6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #0077b6;
+    font-size: 26px;
+}
+
+/* COUNT NUMBER */
+
+.cbox .count {
+    font-size: 34px;
+    font-weight: 700;
+    color: #003b8f;
+    margin-bottom: 6px;
+}
+
+/* TITLE */
+
+.cbox h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #12cffe;
+}
+
+
 /* ---------------- RESPONSIVE ---------------- */
 
 /* Tablets (max-width: 1024px) */
@@ -245,6 +452,16 @@
     .arrow {
         font-size: 35px;
     }
+
+    .feature-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counting {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
 }
 
 /* Large phones / small tablets (max-width: 768px) */
@@ -281,7 +498,7 @@
         top: 70px;
         left: 0;
         width: 100%;
-        background: #002c8f;
+        background: #1354ed;
         flex-direction: column;
         text-align: center;
         padding: 10px 0;
@@ -297,7 +514,94 @@
     .nav-links.active {
         display: flex;
     }
+
+    /* Reduce top bar font size */
+    .top-header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+    }
+
+    .top-left span:nth-child(3) {
+        display: none;
+    }
+
+    .top-right {
+        display: none;
+    }
+
+    .top-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .top-left span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .top-right a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .main-nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .feature-items {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        padding: 25px 25px;
+    }
+
+    .box h3 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    .counting {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .cbox {
+        padding: 30px 15px;
+    }
+
+    .cbox .count {
+        font-size: 30px;
+    }
+
+    .cbox h3 {
+        font-size: 14px;
+    }
+        .heading h2 {
+        font-size: 26px;
+    }
+
+    .about-points {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
 }
+
 
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
@@ -323,35 +627,6 @@
         padding: 6px;
     }
 
-    /* Reduce top bar font size */
-    .top-header-flex {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-        padding: 8px 0;
-    }
-
-    .top-left,
-    .top-right {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-    .top-left span {
-        font-size: 12px;
-        margin-right: 10px;
-    }
-
-    .top-right a {
-        font-size: 12px;
-        margin-left: 10px;
-    }
-
-    .main-nav a {
-        margin-left: 10px;
-        font-size: 14px;
-    }
 
     .logo-box h1 {
         font-size: 18px;
