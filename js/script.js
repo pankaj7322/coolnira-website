@@ -89,41 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(slide, 2800);
 
 });
-// *********************** Inquiry form
 
-const form = document.getElementById("contactForm");
-const popup = document.getElementById("popupOverlay");
-const closeBtn = document.getElementById("closePopup");
-
-form.addEventListener("submit", async (e) => {
-
-    e.preventDefault();
-
-    const data = Object.fromEntries(
-        new FormData(form).entries()
-    );
-
-    try {
-        const res = await fetch(
-            "https://script.google.com/macros/s/AKfycbzgY-hzAZQW4WBpzs94bMYJL_Erwckhz6HEkbDUTc0IoHd_mQZ-zHP4H5B5CiWUZCBS/exec",
-            {
-                method: "POST",
-                body: JSON.stringify(data)
-            }
-        );
-
-        const result = await res.json();
-
-        if (result.status === "success") {
-            popup.classList.add("active");
-            form.reset();
-        }
-
-    } catch (err) {
-        alert("Submission failed. Try again.");
-    }
-
-});
+// -----------------back on top
 document.addEventListener("DOMContentLoaded", () => {
 
     const backBtn = document.getElementById("backToTop");
@@ -144,7 +111,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+document.addEventListener("DOMContentLoaded", () => {
 
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("popupOverlay");
+    const closeBtn = document.getElementById("closePopup");
+    const submitBtn = document.querySelector(".submit-btn");
 
+    if (!form) return;
 
+    form.addEventListener("submit", async (e) => {
 
+        e.preventDefault(); // ALWAYS stop default submit
+
+        const name = form.name.value.trim();
+        const phone = form.phone.value.trim();
+        const city = form.city.value.trim();
+        const pincode = form.pincode.value.trim();
+
+        // ================= VALIDATION =================
+
+        if (!/^[A-Za-z ]+$/.test(name)) {
+            alert("Please enter a valid name.");
+            return;
+        }
+
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            alert("Enter valid 10 digit phone number.");
+            return;
+        }
+
+        if (!/^[A-Za-z ]+$/.test(city)) {
+            alert("Please enter a valid city name.");
+            return;
+        }
+
+        if (!/^\d{6}$/.test(pincode)) {
+            alert("Enter valid 6 digit pincode.");
+            return;
+        }
+
+        // ================= END VALIDATION =================
+
+        // show submitting state
+        submitBtn.textContent = "Submitting...";
+        submitBtn.disabled = true;
+
+        const data = { name, phone, city, pincode };
+
+        try {
+
+            const res = await fetch(
+                "https://script.google.com/macros/s/AKfycbzgY-hzAZQW4WBpzs94bMYJL_Erwckhz6HEkbDUTc0IoHd_mQZ-zHP4H5B5CiWUZCBS/exec",
+                {
+                    method: "POST",
+                    body: JSON.stringify(data)
+                }
+            );
+
+            const result = await res.json();
+
+            if (result.status === "success") {
+                popup.classList.add("active");
+                form.reset();
+            }
+
+        } catch (err) {
+            alert("Submission failed. Try again.");
+        }
+
+        // restore button
+        submitBtn.textContent = "Send Request";
+        submitBtn.disabled = false;
+
+    });
+
+    closeBtn?.addEventListener("click", () => {
+        popup.classList.remove("active");
+    });
+
+});
